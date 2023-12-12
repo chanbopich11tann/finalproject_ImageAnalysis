@@ -55,7 +55,6 @@ if result.status == OperationStatusCodes.succeeded:
                 width=5
             )
 image.show()
-
 # Save the modified image in a new folder
 output_folder = './New Generated Images'
 if not os.path.exists(output_folder):
