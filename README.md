@@ -1,12 +1,7 @@
-# Final Project_Image Analysis
-
-Creating a complete README file based on the code and files provided involves detailing each step and aspect of using the API. Due to the limitations of this platform's capabilities to generate actual images, GIFs, or videos, I'll provide a textual template that you can further enhance with visual elements.
-
-Here's a basic template to get you started. Please replace placeholders with actual content, and you can enrich it by adding images, GIFs, and more detailed explanations:
-
+# Final Project Documentation
 ---
 
-# API Name
+# API Name: Image Analysis
 
 ## Purpose
 
@@ -19,21 +14,20 @@ This API facilitates various image processing tasks like handwriting extraction,
 To get started, ensure you have Python installed. Then, clone the repository and install the required dependencies using the following commands:
 
 ```bash
-git clone https://github.com/your-repo/your-api.git
-cd your-api
-pip install -r requirements.txt
+git clone https://github.com/chanbopich11tann/finalproject_ImageAnalysis.git
+cd final_project_api
 ```
 
 ### Authentication
 
-1. Obtain an API key and endpoint from Azure Cognitive Services.
-2. Create a `credential.json` file in the root directory with the following structure:
+1. I obtained an API key and endpoint from Azure Cognitive Services.
+2. I created a `credential.json` file in the root directory with the following structure:
 
 ```json
 {
-    "API_KEY": "your-api-key",
-    "ENDPOINT": "your-endpoint"
-}
+    "API_KEY": "d5dab499fc804fb28355568d460055f8",
+    "ENDPOINT": "https://ai-vision-api-demo.cognitiveservices.azure.com/"
+} 
 ```
 
 ## Usage
