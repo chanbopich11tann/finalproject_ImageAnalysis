@@ -1,4 +1,4 @@
-# Example 1: 
+# Example 1: Handwriting Extraction
 import os
 import io 
 import json
