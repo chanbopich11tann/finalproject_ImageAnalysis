@@ -58,7 +58,8 @@ Extracted Text:
 ![](final_project_api/Images/text1.png)
 
 Extracted Image: 
-![](final_project_api/Images/1.png)
+![](final_project_api/New%20Generated%20Images/handwriting_result.jpg)
+
 
 7. **Saving the Modified Image:** The modified image, with highlighted text areas, is saved in a new folder named 'New Generated Images' as 'handwriting_result.jpg'.
 
