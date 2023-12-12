@@ -49,15 +49,15 @@ The provided code snippet demonstrates the process of extracting handwritten tex
 
 3. **Handwriting Extraction:** The API performs handwriting extraction on a local image file (for example, `1.png`) in `Images` folder by sending a request to the Cognitive Services API and retrieving the extracted text.
 
-Original Handwriting Image: 
+The Original Handwriting Image: 
 ![](final_project_api/Images/1.png)
 
 4. **Text Annotation:** The script visualizes the extracted text by drawing bounding boxes around the identified text lines on the image.
 
-Extracted Text: 
+The Extracted Text: 
 ![](final_project_api/Images/text1.png)
 
-Extracted Image: 
+The Extracted Image: 
 
 ![](./final_project_api/New%20Generated%20Images/handwriting_result.jpg)
 
@@ -70,11 +70,9 @@ Certainly! Here's the documentation for Landmark Detection functionality of your
 
 ### Landmark Detection
 
-The Landmark Detection feature in our API utilizes Azure Cognitive Services to identify landmarks within images.
+#### Purpose
 
-#### Code Example
-
-
+The Landmark Detection feature in our API utilizes Azure Cognitive Services to identify landmarks within images. Detail Code can be found in `exampl2.py` file.
 
 #### Explanation
 
@@ -82,11 +80,21 @@ This code snippet demonstrates how to detect landmarks within an image using our
 
 1. **Loading Credentials:** The code initializes the API client by loading the necessary credentials from the `credential.json` file.
 
-2. **Initializing the Client:** It creates the Computer Vision client using the loaded credentials to interact with Azure Cognitive Services.
+2. **Initializing the Client:** It creates the AI Vision client using the loaded credentials to interact with Azure Cognitive Services.
 
-3. **Landmark Detection:** The API performs landmark detection on an image (`landmark2.png`) by sending a request with the specified domain to Cognitive Services API and retrieves detected landmarks.
+3. **Landmark Detection:** The API performs landmark detection on an image (for example, `landmark1.png`) in `Images` folder by sending a request with the specified domain to Cognitive Services API and retrieves detected landmarks.
+
+The Original Landmark Image: 
+![](final_project_api/Images/landmark1.png)
+
+
 
 4. **Display and Annotation:** The script visualizes the detected landmarks by annotating the image with the names of identified landmarks and displays it.
+
+The Detected Landmark:
+![](./final_project_api/New%20Generated%20Images/annotated_landmark_image.jpg)
+
+
 
 5. **Saving the Modified Image:** The annotated image, showing identified landmarks, is saved in a new folder named 'New Generated Images' as 'annotated_landmark_image.jpg'.
 
