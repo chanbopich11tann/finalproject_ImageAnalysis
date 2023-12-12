@@ -32,8 +32,45 @@ cd final_project_api
 
 ## Usage
 
-### Handwriting Extraction
+### 1. Handwriting Extraction
 
+#### Purpose
+
+The Handwriting Extraction functionality in our API utilizes Azure Cognitive Services to detect and extract handwritten text from images. Detail Code can be found in `example1.py` file.
+
+
+#### Explanation
+
+The provided code snippet demonstrates the process of extracting handwritten text from an image using our API, leveraging Azure Cognitive Services' AI Vision capabilities.
+
+1. **Loading Credentials:** The code initializes the API client by loading the necessary credentials from the `credential.json` file.
+
+2. **Initializing the Client:** It creates the Computer Vision client using the loaded credentials to interact with Azure Cognitive Services.
+
+3. **Handwriting Extraction:** The API performs handwriting extraction on a local image file (for example, `1.png`) by sending a request to the Cognitive Services API and retrieving the extracted text.
+
+
+
+
+4. **Text Annotation:** The script visualizes the extracted text by drawing bounding boxes around the identified text lines on the image.
+
+5. **Saving the Modified Image:** The modified image, with highlighted text areas, is saved in a new folder named 'New Generated Images' as 'handwriting_result.jpg'.
+
+### Usage Instructions
+
+1. **Install Dependencies:** Ensure you have the required dependencies installed by running `pip install -r requirements.txt`.
+
+2. **Authentication:** Obtain the API key and endpoint from Azure Cognitive Services and create a `credential.json` file in the root directory following the provided format.
+
+3. **Run the Example:** Replace the placeholder code in the example with your actual code and execute it to extract handwriting from your images.
+
+### Note
+
+Make sure to replace the placeholders in the code example (`[Insert the code example here]`) with your actual Python code for handwriting extraction using the Azure Cognitive Services API.
+
+---
+
+Enhance this section by embedding code snippets, explanations, and additional details specific to your API's Handwriting Extraction functionality. Incorporate visuals such as images or diagrams to illustrate the process for clearer understanding.
 #### Code Example:
 
 ```python
