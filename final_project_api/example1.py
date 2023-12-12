@@ -63,4 +63,3 @@ if not os.path.exists(output_folder):
 output_path = os.path.join(output_folder, 'handwriting_result.jpg')
 image.save(output_path)
 
-# {'additional_properties': {}, 'language': None, 'bounding_box': [863.0, 748.0, 1288.0, 737.0, 1290.0, 824.0, 865.0, 834.0], 'appearance''appearance': <azure.cognitiveservices.vision.computervision.models._models_py3.Appearance object at 0x00001D1C6B6955>, 'text': 'Hi Reddit!', 'words': [<azure.cognitiveservices.vision.computervision.moels._models_py3.Word object at 0x000001D1C6B6950>, <azure. cognitiveservices.vision.computervision.models._models_py3.Word object at 0×000001D1C6B69670>]}
