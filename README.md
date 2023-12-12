@@ -52,15 +52,43 @@ The provided code snippet demonstrates the process of extracting handwritten tex
 Original Handwriting Image: 
 ![](final_project_api/Images/1.png)
 
-5. **Text Annotation:** The script visualizes the extracted text by drawing bounding boxes around the identified text lines on the image.
+4. **Text Annotation:** The script visualizes the extracted text by drawing bounding boxes around the identified text lines on the image.
 
 Extracted Text: 
 ![](final_project_api/Images/text1.png)
 
 Extracted Image: 
-![](final_project_api/Images/1.png)
 
-7. **Saving the Modified Image:** The modified image, with highlighted text areas, is saved in a new folder named 'New Generated Images' as 'handwriting_result.jpg'.
+![](./final_project_api/New%20Generated%20Images/handwriting_result.jpg)
+
+5. **Saving the Modified Image:** The modified image, with highlighted text areas, is saved in a new folder named 'New Generated Images' as 'handwriting_result.jpg'.
+
+
+Certainly! Here's the documentation for Landmark Detection functionality of your API:
+
+---
+
+### Landmark Detection
+
+The Landmark Detection feature in our API utilizes Azure Cognitive Services to identify landmarks within images.
+
+#### Code Example
+
+
+
+#### Explanation
+
+This code snippet demonstrates how to detect landmarks within an image using our API with Azure Cognitive Services' Computer Vision capabilities.
+
+1. **Loading Credentials:** The code initializes the API client by loading the necessary credentials from the `credential.json` file.
+
+2. **Initializing the Client:** It creates the Computer Vision client using the loaded credentials to interact with Azure Cognitive Services.
+
+3. **Landmark Detection:** The API performs landmark detection on an image (`landmark2.png`) by sending a request with the specified domain to Cognitive Services API and retrieves detected landmarks.
+
+4. **Display and Annotation:** The script visualizes the detected landmarks by annotating the image with the names of identified landmarks and displays it.
+
+5. **Saving the Modified Image:** The annotated image, showing identified landmarks, is saved in a new folder named 'New Generated Images' as 'annotated_landmark_image.jpg'.
 
 ### Usage Instructions
 
@@ -68,30 +96,15 @@ Extracted Image:
 
 2. **Authentication:** Obtain the API key and endpoint from Azure Cognitive Services and create a `credential.json` file in the root directory following the provided format.
 
-3. **Run the Example:** Replace the placeholder code in the example with your actual code and execute it to extract handwriting from your images.
+3. **Run the Example:** Replace the placeholder code in the example with your actual code for landmark detection and execute it to identify landmarks within your images.
 
 ### Note
 
-Make sure to replace the placeholders in the code example (`[Insert the code example here]`) with your actual Python code for handwriting extraction using the Azure Cognitive Services API.
+Make sure to replace the placeholders in the code example with your actual Python code for landmark detection using the Azure Cognitive Services API.
 
 ---
 
-Enhance this section by embedding code snippets, explanations, and additional details specific to your API's Handwriting Extraction functionality. Incorporate visuals such as images or diagrams to illustrate the process for clearer understanding.
-#### Code Example:
-
-```python
-# Code for handwriting extraction
-# ...
-```
-
-### Landmark Detection
-
-#### Code Example:
-
-```python
-# Code for landmark detection
-# ...
-```
+Enhance this section by embedding code snippets, explanations, and additional details specific to your API's Landmark Detection functionality. Incorporate visuals such as images or diagrams to illustrate the process for clearer understanding.
 
 ### Image Description
 
