@@ -1,33 +1,51 @@
 const express = require('express');
 const axios = require('axios');
+require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 6001;
 
-// Endpoint to access the vendor API
-app.post('/api/vendor', async (req, res) => {
+// Middleware to parse JSON
+app.use(express.json());
+
+// Endpoint to receive image from Professor
+app.post('/analyze-image', async (req, res) => {
   try {
-    // Process request from Professor John
-    // Prepare payload or handle data as needed
-    
-    // Forward the request to the vendor API
-    const vendorResponse = await axios.post('VENDOR_API_ENDPOINT', req.body, {
+    // Retrieve image URL from the request body
+    const { image } = req.body;
+
+    // Prepare payload for the vendor API
+    const payload = {
+      url: process.env.VENDOR_API_ENDPOINT + 'vision/v3.1/analyze',
+      params: {
+        visualFeatures: 'Categories,Description,Color',
+        details: 'Celebrities,Landmarks',
+        language: 'en',
+      },
+      data: {
+        url: image, // Assuming the image URL is sent in the request body
+      },
       headers: {
-        'Authorization': 'Bearer YOUR_VENDOR_API_KEY',
-        'Content-Type': 'application/json'
-      }
+        'Ocp-Apim-Subscription-Key': process.env.VENDOR_API_KEY,
+        'Content-Type': 'application/json',
+      },
+    };
+
+    // Forward the request to the vendor API
+    const vendorResponse = await axios.post(payload.url, payload.data, {
+      params: payload.params,
+      headers: payload.headers,
     });
 
-    // Return the vendor API response to Professor John
+    // Send the vendor API's response back to Professor
     res.json(vendorResponse.data);
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    // Handle any errors
+    res.status(500).json({ error: error.message });
   }
 });
 
-// Start the server
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
