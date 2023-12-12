@@ -1,43 +1,66 @@
+# Example 1: 
 import os
 import io 
 import json
-
+import time
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes, VisualFeatureTypes
 import requests # pip install requests
 from PIL import Image, ImageDraw, ImageFont
 
-credential = json.load(open('credential.json'))
-
+credential = json.load(open ('credential.json'))
 API_KEY = credential['API_KEY']
 ENDPOINT = credential['ENDPOINT']
 
 cv_client = ComputerVisionClient(ENDPOINT, CognitiveServicesCredentials(API_KEY))
 
-image_url = ''
-local_file = './Image/1.jpg'
-response = cv_client.read(url =image_url,Language='en', raw=True)
-response = cv_client.read_in_stream(open(local_file, 'rb')
-)
+image_url = 'https://i.redd.it/pf440nc480921.jpg'
+local_file = './Images/1.png'
+# response = cv_client.read(url =image_url,Language='en', raw=True)
+
+response = cv_client.read_in_stream(open(local_file, 'rb'), Language='en', raw=True)
 operationLocation = response.headers['Operation-Location']
-Operation_id = operationLocation.split('/')[-1]
+operation_id = operationLocation.split('/')[-1]
+time.sleep(5)
 result = cv_client.get_read_result(operation_id)
 
-print(result)
-print(result.status)
-print(result.analyze_result)
+#print(result)
+#print(result.status)
+#print(result.analyze_result)
 
 if result.status == OperationStatusCodes.succeeded:
     read_results = result.analyze_result.read_results
     for analyzed_result in read_results:
         for line in analyzed_result.lines:
-            print('line: ')
             print(line.text)
-            for word in line.words:
-                print('Words:')
-                print(word.text)
-            break
+            #for word in line.words:
+            #    print('Words:')
+            #    print(word.text)
 
-{'additional_properties': {}, 'language': None,
-'bounding_box': []}
+image = Image.open(local_file)
+# Convert from RGBA to RGB
+if image.mode == 'RGBA':
+    image = image.convert('RGB')
+
+if result.status == OperationStatusCodes.succeeded:
+    read_results = result.analyze_result.read_results
+    for analyzed_result in read_results:
+        for line in analyzed_result.lines:
+            x1, y1, x2, y2, x3, y3, x4, y4 = line.bounding_box
+            draw = ImageDraw.Draw(image)
+            draw.line(
+                ((x1, y1), (x2, y1), (x2, y2), (x3, y2), (x3, y3), (x4, y3), (x4, y4), (x1, y4), (x1, y1)),
+                fill = (255, 0, 0),
+                width=5
+            )
+image.show()
+
+# Save the modified image in a new folder
+output_folder = './New Generated Images'
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+output_path = os.path.join(output_folder, 'handwriting_result.jpg')
+image.save(output_path)
+
+# {'additional_properties': {}, 'language': None, 'bounding_box': [863.0, 748.0, 1288.0, 737.0, 1290.0, 824.0, 865.0, 834.0], 'appearance''appearance': <azure.cognitiveservices.vision.computervision.models._models_py3.Appearance object at 0x00001D1C6B6955>, 'text': 'Hi Reddit!', 'words': [<azure.cognitiveservices.vision.computervision.moels._models_py3.Word object at 0x000001D1C6B6950>, <azure. cognitiveservices.vision.computervision.models._models_py3.Word object at 0×000001D1C6B69670>]}
