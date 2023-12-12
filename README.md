@@ -98,57 +98,38 @@ The Detected Landmark:
 
 5. **Saving the Modified Image:** The annotated image, showing identified landmarks, is saved in a new folder named 'New Generated Images' as 'annotated_landmark_image.jpg'.
 
-### Usage Instructions
 
-1. **Install Dependencies:** Ensure you have the required dependencies installed by running `pip install -r requirements.txt`.
-
-2. **Authentication:** Obtain the API key and endpoint from Azure Cognitive Services and create a `credential.json` file in the root directory following the provided format.
-
-3. **Run the Example:** Replace the placeholder code in the example with your actual code for landmark detection and execute it to identify landmarks within your images.
-
-### Note
-
-Make sure to replace the placeholders in the code example with your actual Python code for landmark detection using the Azure Cognitive Services API.
+Absolutely! Here's the documentation for Image Description within your API:
 
 ---
-
-Enhance this section by embedding code snippets, explanations, and additional details specific to your API's Landmark Detection functionality. Incorporate visuals such as images or diagrams to illustrate the process for clearer understanding.
 
 ### Image Description
 
-#### Code Example:
 
-```python
-# Code for image description
-# ...
-```
+#### Purpose
+The Image Description feature within our API employs Azure Cognitive Services to generate textual descriptions for images. Detail Code can be found in `example3.py` file.
 
-## Error Handling
 
-The API handles errors gracefully. Check the response status and handle exceptions as needed. Refer to the API documentation for error codes and messages.
+#### Explanation
 
-## Best Practices
+This code demonstrates how to describe an image using our API with Azure Cognitive Services' Computer Vision capabilities.
 
-- Use descriptive variable names in your code.
-- Ensure proper error handling to manage unexpected scenarios.
-- Optimize API calls by batching requests where possible.
+1. **Loading Credentials:** The code initializes the API client by loading the necessary credentials from the `credential.json` file.
 
-## Support
+2. **Initializing the Client:** It creates the Computer Vision client using the loaded credentials to interact with Azure Cognitive Services.
 
-For any queries or support, contact us at support@example.com.
+3. **Image Description:** The API analyzes the provided image URL to generate textual descriptions. It retrieves multiple descriptions and their confidence levels for the image.
 
-## Contributing
+The Original Image via URL:
 
-We welcome contributions! Follow our [contribution guidelines](CONTRIBUTING.md) to contribute to this project.
+![](https://preview.redd.it/cl68jx3jprk71.jpg?width=640&crop=smart&auto=webp&s=ac05cca80dfb5db579343a59c99c76fa908d7517)
 
-## License
 
-This project is licensed under the [LICENSE_NAME](LICENSE) - e.g., MIT License.
+4. **Annotating Image:** The script displays the top description on the image and saves the modified image as 'described_image.jpg' in the 'New Generated Images' directory.
 
----
+The Described Image: 
 
-Enhance this README with real code snippets, explanations, and examples. Embed images or GIFs to illustrate usage wherever necessary. Organize sections, provide clear explanations, and use markdown formatting to improve readability.
+![](./final_project_api/New%20Generated%20Images/described_image.jpg)
 
-Consider creating separate files (like CONTRIBUTING.md, LICENSE, etc.) and linking them appropriately in the README for a more organized repository structure.
 
-This template serves as a foundation; you can build upon it with actual code snippets, visual aids, and detailed explanations to create an excellent documentation README for your API.
+
