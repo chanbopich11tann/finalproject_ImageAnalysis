@@ -47,14 +47,20 @@ The provided code snippet demonstrates the process of extracting handwritten tex
 
 2. **Initializing the Client:** It creates the Computer Vision client using the loaded credentials to interact with Azure Cognitive Services.
 
-3. **Handwriting Extraction:** The API performs handwriting extraction on a local image file (for example, `1.png`) by sending a request to the Cognitive Services API and retrieving the extracted text.
+3. **Handwriting Extraction:** The API performs handwriting extraction on a local image file (for example, `1.png`) in `Images` folder by sending a request to the Cognitive Services API and retrieving the extracted text.
 
+Original Handwriting Image: 
+![](final_project_api/Images/1.png)
 
+5. **Text Annotation:** The script visualizes the extracted text by drawing bounding boxes around the identified text lines on the image.
 
+Extracted Text: 
+![](final_project_api/Images/text1.png)
 
-4. **Text Annotation:** The script visualizes the extracted text by drawing bounding boxes around the identified text lines on the image.
+Extracted Image: 
+![](final_project_api/Images/1.png)
 
-5. **Saving the Modified Image:** The modified image, with highlighted text areas, is saved in a new folder named 'New Generated Images' as 'handwriting_result.jpg'.
+7. **Saving the Modified Image:** The modified image, with highlighted text areas, is saved in a new folder named 'New Generated Images' as 'handwriting_result.jpg'.
 
 ### Usage Instructions
 
