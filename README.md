@@ -1,4 +1,4 @@
-# fInalproject_ImageAnalysis
+# Final Project_Image Analysis
 
 Creating a complete README file based on the code and files provided involves detailing each step and aspect of using the API. Due to the limitations of this platform's capabilities to generate actual images, GIFs, or videos, I'll provide a textual template that you can further enhance with visual elements.
 
