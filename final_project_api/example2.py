@@ -15,7 +15,7 @@ cv_client = ComputerVisionClient(ENDPOINT, CognitiveServicesCredentials(API_KEY)
 
 # Detect Landmarks
 domain = 'landmarks'
-image_path = './Images/landmark2.png' 
+image_path = './Images/landmark1.png' 
 with open(image_path, 'rb') as image_file:
     analysis = cv_client.analyze_image_by_domain_in_stream(model=domain, image=image_file)
 for landmark in analysis.result.get('landmarks', []):
